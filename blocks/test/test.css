@@ -1,0 +1,12 @@
+.test {
+  padding: 24px;
+  background-color: var(--light-color);
+  border-radius: 8px;
+}
+
+.test .test-text {
+  margin: 0;
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  color: var(--text-color);
+}
