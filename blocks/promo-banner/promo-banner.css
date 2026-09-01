@@ -1,0 +1,41 @@
+.promo-banner {
+  background-color: var(--link-color);
+  color: white;
+  padding: 16px 24px;
+  text-align: center;
+}
+
+.promo-banner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.promo-banner-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.promo-banner-headline {
+  margin: 0;
+  font-size: var(--body-font-size-m);
+  font-weight: 600;
+  color: white;
+}
+
+.promo-banner-cta {
+  background-color: white;
+  color: var(--link-color);
+  border: 2px solid white;
+  font-weight: 700;
+}
+
+.promo-banner-cta:hover {
+  background-color: var(--link-hover-color);
+  color: white;
+  border-color: var(--link-hover-color);
+}

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="About page — EDS training exercise" />
+    <title>About Us</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <script src="/scripts/scripts.js" type="module"></script>
+  </head>
+  <body>
+    <header></header>
+
+    <main>
+
+      <!--
+        SECTION 1 — default (no style class)
+        Equivalent to content above the first --- in a Google Doc.
+        Plain text / title content lives here.
+      -->
+      <div class="section">
+        <div>
+          <h1>About Us</h1>
+          <p>Welcome to the About page. This is a plain default section — no background colour.</p>
+        </div>
+      </div>
+
+      <!--
+        SECTION 2 — "highlight" style
+        Equivalent to adding a Section Metadata table with Style = highlight in the doc.
+        Gives a light-grey background via styles.css (.section.highlight).
+      -->
+      <div class="section highlight">
+        <div>
+          <h2>Our Mission</h2>
+          <p>We build fast, accessible websites using Edge Delivery Services.</p>
+        </div>
+      </div>
+
+      <!--
+        SECTION 3 — contains a Hero block and a Cards block
+        Equivalent to tables in the doc inside a section.
+      -->
+      <div class="section">
+        <div>
+
+          <!--
+            HERO BLOCK
+            The block wrapper div carries the block name as a class.
+            Each child div = one row of the table from the doc.
+            Child divs inside each row = columns of that table row.
+          -->
+          <div class="hero block" data-block-name="hero" data-block-status="initialized">
+            <div>
+              <div>
+                <h2>Fast. Accessible. Beautiful.</h2>
+                <p>Powered by Edge Delivery Services.</p>
+                <p><a href="/training/about" class="button">Learn more</a></p>
+              </div>
+            </div>
+          </div>
+
+          <!--
+            CARDS BLOCK — 3 cards
+            Row 1 = card 1, Row 2 = card 2, Row 3 = card 3.
+            Each row has two columns: image column + body column.
+          -->
+          <div class="cards block" data-block-name="cards" data-block-status="initialized">
+            <div>
+              <div><p><!-- image would go here --></p></div>
+              <div>
+                <h3>Speed</h3>
+                <p>Pages load in under 1 second with EDS Lighthouse scores of 100.</p>
+              </div>
+            </div>
+            <div>
+              <div><p><!-- image would go here --></p></div>
+              <div>
+                <h3>Authoring</h3>
+                <p>Authors write in Google Docs or SharePoint — no CMS UI needed.</p>
+              </div>
+            </div>
+            <div>
+              <div><p><!-- image would go here --></p></div>
+              <div>
+                <h3>Simplicity</h3>
+                <p>Blocks are plain HTML + CSS + JS. No framework. No build step.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+
+    <footer></footer>
+  </body>
+</html>
