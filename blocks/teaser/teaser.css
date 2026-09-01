@@ -1,0 +1,36 @@
+.teaser {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.teaser-image {
+  flex: 0 0 40%;
+  line-height: 0;
+}
+
+.teaser-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+}
+
+.teaser-content {
+  flex: 1;
+}
+
+.teaser-content h2 {
+  margin-top: 0;
+}
+
+@media (width < 600px) {
+  .teaser {
+    flex-direction: column;
+  }
+
+  .teaser-image {
+    flex: unset;
+    width: 100%;
+  }
+}
