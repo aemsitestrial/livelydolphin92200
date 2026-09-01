@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="EDS training demo — custom blocks exercise" />
+    <title>EDS Demo Page</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <script src="/scripts/scripts.js" type="module"></script>
+  </head>
+  <body>
+    <header></header>
+
+    <main>
+
+      <!-- ═══ SECTION 1 — Default ═══════════════════════════════════════
+           In Google Docs: everything above the first --- line.
+           No section metadata table = plain white background.
+      ══════════════════════════════════════════════════════════════════ -->
+      <div class="section">
+        <div>
+          <h1>EDS Training Demo</h1>
+          <p>This page shows a Page, two Sections, and two custom Blocks working together.</p>
+        </div>
+      </div>
+
+      <!-- ═══ SECTION 2 — contains the Promo Banner block ═══════════════
+           In Google Docs: after a --- line, then a Promo Banner table.
+           Section has no extra style so background stays white.
+      ══════════════════════════════════════════════════════════════════ -->
+      <div class="section">
+        <div>
+
+          <!--
+            PROMO BANNER BLOCK
+            Doc table equivalent:
+              +------------------+------------------------+--------------------+
+              | Promo Banner     |                        |                    |
+              +------------------+------------------------+--------------------+
+              | 🎉               | Special offer today!   | /deals             |
+              +------------------+------------------------+--------------------+
+          -->
+          <div class="promo-banner block" data-block-name="promo-banner" data-block-status="initialized">
+            <div>
+              <div>🎉</div>
+              <div>Special offer — 20% off all courses today!</div>
+              <div><a href="/training/about">Claim Now</a></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ SECTION 3 — "highlight" style + Feature Grid block ═════════
+           In Google Docs: after ---, add a Section Metadata table
+           with Style = highlight to get the grey background.
+      ══════════════════════════════════════════════════════════════════ -->
+      <div class="section highlight">
+        <div>
+
+          <h2>Why Edge Delivery?</h2>
+
+          <!--
+            FEATURE GRID BLOCK
+            Doc table equivalent (one feature per row):
+              +------------------+-------------------+-----------------------------+
+              | Feature Grid     |                   |                             |
+              +------------------+-------------------+-----------------------------+
+              | ⚡               | Instant Load      | Sub-second pages every time |
+              +------------------+-------------------+-----------------------------+
+              | ✍️              | Easy Authoring    | Write in Google Docs        |
+              +------------------+-------------------+-----------------------------+
+              | 📦              | Zero Build Step   | No webpack, no compilation  |
+              +------------------+-------------------+-----------------------------+
+              | 🔒              | Secure by Default | No server-side vulnerabilities |
+              +------------------+-------------------+-----------------------------+
+              | 🌍              | Global CDN        | Served from the edge        |
+              +------------------+-------------------+-----------------------------+
+              | 📊              | Built-in Analytics| Real User Monitoring baked in |
+              +------------------+-------------------+-----------------------------+
+          -->
+          <div class="feature-grid block" data-block-name="feature-grid" data-block-status="initialized">
+            <div>
+              <div>⚡</div>
+              <div>Instant Load</div>
+              <div>Sub-second pages with Lighthouse scores of 100.</div>
+            </div>
+            <div>
+              <div>✍️</div>
+              <div>Easy Authoring</div>
+              <div>Authors write in Google Docs or SharePoint — no CMS UI.</div>
+            </div>
+            <div>
+              <div>📦</div>
+              <div>Zero Build Step</div>
+              <div>No webpack, no compilation. Plain HTML, CSS, JS.</div>
+            </div>
+            <div>
+              <div>🔒</div>
+              <div>Secure by Default</div>
+              <div>No server-side code = minimal attack surface.</div>
+            </div>
+            <div>
+              <div>🌍</div>
+              <div>Global CDN</div>
+              <div>Every page is served from the edge, close to the user.</div>
+            </div>
+            <div>
+              <div>📊</div>
+              <div>Built-in RUM</div>
+              <div>Real User Monitoring is baked in — no extra tag needed.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+
+    <footer></footer>
+  </body>
+</html>
