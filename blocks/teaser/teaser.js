@@ -1,6 +1,10 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 import { moveInstrumentation } from '../../scripts/scripts.js';
 
+function isAemDeliveryUrl(src) {
+  return src.includes('/adobe/assets/') || src.includes('delivery-p');
+}
+
 function buildPicture(cell, alt) {
   const existing = cell.querySelector('picture');
   if (existing) return existing;
@@ -8,6 +12,16 @@ function buildPicture(cell, alt) {
   const anchor = cell.querySelector('a');
   const src = anchor ? anchor.href : cell.textContent.trim();
   if (!src) return null;
+
+  if (isAemDeliveryUrl(src)) {
+    const img = document.createElement('img');
+    img.src = src;
+    img.alt = alt;
+    img.loading = 'lazy';
+    const picture = document.createElement('picture');
+    picture.append(img);
+    return picture;
+  }
 
   return createOptimizedPicture(src, alt, true, [{ width: '800' }]);
 }
