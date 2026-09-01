@@ -5,6 +5,25 @@ function isAemDeliveryUrl(src) {
   return src.includes('/adobe/assets/') || src.includes('delivery-p');
 }
 
+function resolveLayout(block) {
+  const rows = [...block.children];
+  const supportedLayouts = new Set(['full', '2', '3', 'two', 'three']);
+
+  for (const row of rows.slice(2)) {
+    const rawValue = row.textContent.trim().toLowerCase();
+    if (!rawValue) continue;
+
+    if (rawValue === 'two') return '2';
+    if (rawValue === 'three') return '3';
+    if (supportedLayouts.has(rawValue)) return rawValue;
+  }
+
+  if (block.classList.contains('teaser-layout-2')) return '2';
+  if (block.classList.contains('teaser-layout-3')) return '3';
+
+  return 'full';
+}
+
 function buildPicture(cell, alt) {
   const existing = cell.querySelector('picture');
   if (existing) return existing;
@@ -27,6 +46,10 @@ function buildPicture(cell, alt) {
 }
 
 export default function decorate(block) {
+  const layout = resolveLayout(block);
+  block.classList.remove('teaser-layout-full', 'teaser-layout-2', 'teaser-layout-3');
+  block.classList.add(`teaser-layout-${layout}`);
+
   const [imageRow, contentRow] = [...block.children];
 
   const [imageCell, altCell] = [...(imageRow?.children || [])];
