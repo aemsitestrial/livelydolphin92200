@@ -36,6 +36,26 @@
                     "required": true
                 },
                 {
+                    "component": "select",
+                    "name": "layout",
+                    "label": "Column layout",
+                    "value": "full",
+                    "options": [
+                        {
+                            "name": "Full column",
+                            "value": "full"
+                        },
+                        {
+                            "name": "2 columns",
+                            "value": "2"
+                        },
+                        {
+                            "name": "3 columns",
+                            "value": "3"
+                        }
+                    ]
+                },
+                {
                     "component": "richtext",
                     "name": "textContent_text",
                     "label": "Text",
