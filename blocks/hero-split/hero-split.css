@@ -1,0 +1,86 @@
+/* Block: hero-split — split hero, text + image side-by-side.
+   Values extracted from source computed styles at https://wknd-trendsetters.site */
+
+/* Base (mobile): stack text above image. Text ordered first, image second. */
+.hero-split {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Row 1 = image cell, Row 2 = text cell (per authored .plain.html order). */
+.hero-split > div:first-child {
+  order: 2;
+}
+
+.hero-split > div:nth-child(2) {
+  order: 1;
+}
+
+/* Text cell */
+.hero-split h1 {
+  margin: 0;
+  font-size: 36px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.hero-split p {
+  margin: 24px 0 0;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+/* Buttons — source: primary + secondary side-by-side, 16px gap, 32px above. */
+.hero-split p.button-container {
+  display: inline-block;
+  margin: 32px 0 0;
+}
+
+.hero-split p.button-container + p.button-container {
+  margin-left: 16px;
+}
+
+/* Second CTA is the secondary (white) variant in the source. */
+.hero-split p.button-container:last-of-type a.button:any-link {
+  background-color: #fff;
+  color: var(--dark-color);
+}
+
+.hero-split p.button-container:last-of-type a.button:hover,
+.hero-split p.button-container:last-of-type a.button:focus {
+  background-color: var(--dark-color);
+  color: #fff;
+}
+
+/* Image cell — rounded corners, fills its column. */
+.hero-split > div:first-child p {
+  margin: 0;
+}
+
+.hero-split picture {
+  display: block;
+}
+
+.hero-split img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+@media (width >= 900px) {
+  .hero-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .hero-split h1 {
+    font-size: 56px;
+  }
+}

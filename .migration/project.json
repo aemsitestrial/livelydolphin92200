@@ -1,0 +1,15 @@
+{
+  "type": "xwalk",
+  "sites": {
+    "livelydolphin92200": {
+      "previewOrg": "aemsitestrial",
+      "previewSite": "livelydolphin92200",
+      "contentHostUrl": "author-p153710-e1614654.adobeaemcloud.com",
+      "aemSitePath": "/content/2026/35/livelydolphin92200",
+      "aemAssetsFolderPath": "/content/dam/2026/35/livelydolphin92200",
+      "aemSiteName": "livelydolphin92200",
+      "aemSiteTitle": "livelydolphin92200",
+      "libraryUrl": "https://main--sta-xwalk-boilerplate--aemysites.aem.page/tools/sidekick/library.json"
+    }
+  }
+}

@@ -1,0 +1,155 @@
+/* tabs-profile — testimonial tabs. Source: wknd-trendsetters.site
+   Layout: active panel ABOVE, tab menu (pill boxes) BELOW. */
+
+.tabs-profile {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---- Panels (rendered first / on top) ---- */
+.tabs-profile .tabs-profile-panel {
+  order: 1;
+  margin: 0 0 16px;
+  padding: 0;
+  border: 0;
+  overflow: visible;
+}
+
+.tabs-profile .tabs-profile-panel[aria-hidden='true'] {
+  display: none;
+}
+
+.tabs-profile .tabs-profile-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  align-items: center;
+}
+
+@media (width >= 900px) {
+  .tabs-profile .tabs-profile-content {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.tabs-profile .tabs-profile-image {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.tabs-profile .tabs-profile-image p {
+  margin: 0;
+  line-height: 0;
+}
+
+.tabs-profile .tabs-profile-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 568 / 426;
+  object-fit: cover;
+}
+
+/* Panel text column */
+.tabs-profile .tabs-profile-text {
+  padding: 0;
+}
+
+/* Name (authored as h3) — brand headings are uppercase Syncopate;
+   source name is a plain bold body-font label, so override. */
+.tabs-profile .tabs-profile-text h3 {
+  margin: 0;
+  font-family: var(--body-font-family);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: normal;
+  text-transform: none;
+  color: var(--text-color);
+}
+
+/* First paragraph after the name = subtitle/role */
+.tabs-profile .tabs-profile-text h3 + p {
+  margin: 0 0 32px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25.6px;
+  color: var(--text-color);
+}
+
+/* Quote paragraph */
+/* stylelint-disable-next-line no-descending-specificity */
+.tabs-profile .tabs-profile-text p {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32px;
+  color: var(--text-color);
+}
+
+/* ---- Tab menu (rendered below the panel) ---- */
+.tabs-profile .tabs-profile-list {
+  order: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+}
+
+@media (width >= 600px) {
+  .tabs-profile .tabs-profile-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (width >= 900px) {
+  .tabs-profile .tabs-profile-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Reset the global button styling; these are pill-box selectors. */
+.tabs-profile .tabs-profile-list button {
+  display: block;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 16px;
+  border: 1px solid rgb(232 232 232);
+  border-radius: 16px;
+  background-color: rgb(239 239 239);
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: left;
+  text-overflow: unset;
+  white-space: normal;
+  overflow: visible;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.tabs-profile .tabs-profile-list button:hover,
+.tabs-profile .tabs-profile-list button:focus {
+  background-color: var(--light-color);
+  border-color: var(--dark-color);
+  color: var(--text-color);
+}
+
+.tabs-profile .tabs-profile-list button p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--text-color);
+}
+
+.tabs-profile .tabs-profile-list button[aria-selected='true'] {
+  background-color: var(--light-color);
+  border: 1px solid var(--dark-color);
+  cursor: default;
+}
